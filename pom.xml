@@ -48,43 +48,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <goals>-->
-<!--                            <goal>build-image</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
             </plugin>
-<!--            <plugin>-->
-<!--                <groupId>io.fabric8</groupId>-->
-<!--                <artifactId>docker-maven-plugin</artifactId>-->
-<!--                <version>0.33.0</version>-->
-<!--                <configuration>-->
-<!--                    <images>-->
-<!--                        <image>-->
-<!--                            <name>${spring-boot.build-image.imageName}</name>-->
-<!--                            <build>-->
-
-<!--                            </build>-->
-<!--                        </image>-->
-<!--                    </images>-->
-<!--                </configuration>-->
-<!--            </plugin>-->
             <plugin>
                 <groupId>org.eclipse.jkube</groupId>
                 <artifactId>kubernetes-maven-plugin</artifactId>
                 <version>1.0.0-alpha-3</version>
-<!--                <executions>-->
-<!--                    <execution>-->
-<!--                        <id>k8s-deploy</id>-->
-<!--                        <goals>-->
-<!--                            <goal>push</goal>-->
-<!--                            <goal>resource</goal>-->
-<!--                            <goal>apply</goal>-->
-<!--                        </goals>-->
-<!--                    </execution>-->
-<!--                </executions>-->
                 <configuration>
                     <resources>
                         <replicas>${k8s.replicas}</replicas>
@@ -93,9 +61,7 @@
                         <image>
                             <name>${spring-boot.build-image.imageName}</name>
                             <build>
-
                             </build>
-
                         </image>
                     </images>
                 </configuration>
