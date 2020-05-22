@@ -7,9 +7,15 @@ pipeline {
     }
     stages {
 
-        stage('Build') {
+        stage('CI Build') {
             steps {
                 sh 'mvn clean install'
+            }
+        }
+
+    stage('Build Container') {
+            steps {
+                sh 'mvn spring-boot:build-image'
             }
         }
     }
