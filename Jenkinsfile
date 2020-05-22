@@ -14,10 +14,7 @@ pipeline {
             }
         }
 
-    stage('Build Container') {
-            environment {
-                DOCKER_HOST='tcp://docker:2376'
-            }
+        stage('Build Container') {
             steps {
                 sh 'mvn spring-boot:build-image'
             }
