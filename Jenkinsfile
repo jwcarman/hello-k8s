@@ -22,7 +22,7 @@ pipeline {
         stage('Build Container') {
             steps {
                 configFileProvider([configFile(fileId: 'maven-settings', variable: 'MAVEN_SETTINGS')]) {
-                    sh 'mvn -s $MAVEN_SETTINGS spring-boot:build-image'
+                    sh 'mvn -DskipTests -s $MAVEN_SETTINGS spring-boot:build-image'
                 }
 
             }
