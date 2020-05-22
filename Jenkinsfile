@@ -35,5 +35,13 @@ pipeline {
                 }
             }
         }
+
+        stage('Deploy K8S') {
+            steps {
+                configFileProvider([configFile(fileId: 'kubert-config', variable: 'KUBECONFIG')]) {
+                    sh 'mvn k8s:resource k8s:apply'
+                }
+            }
+        }
     }
 }
