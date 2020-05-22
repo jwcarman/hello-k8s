@@ -17,7 +17,7 @@
     <properties>
         <java.version>14</java.version>
         <spring-boot.build-image.imageName>jwcarman/${project.artifactId}:${project.version}</spring-boot.build-image.imageName>
-        <k8s.replicas>5</k8s.replicas>
+        <k8s.replicas>3</k8s.replicas>
     </properties>
 
     <dependencies>
