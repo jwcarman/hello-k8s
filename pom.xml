@@ -75,16 +75,16 @@
                 <groupId>org.eclipse.jkube</groupId>
                 <artifactId>kubernetes-maven-plugin</artifactId>
                 <version>1.0.0-alpha-3</version>
-                <executions>
-                    <execution>
-                        <id>k8s-deploy</id>
-                        <goals>
-                            <goal>push</goal>
-                            <goal>resource</goal>
-                            <goal>apply</goal>
-                        </goals>
-                    </execution>
-                </executions>
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>k8s-deploy</id>-->
+<!--                        <goals>-->
+<!--                            <goal>push</goal>-->
+<!--                            <goal>resource</goal>-->
+<!--                            <goal>apply</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
                 <configuration>
                     <resources>
                         <replicas>${k8s.replicas}</replicas>
