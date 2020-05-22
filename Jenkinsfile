@@ -5,6 +5,9 @@ pipeline {
             image 'maven:3-jdk-14'
         }
     }
+    environment {
+        DOCKER_HOST=tcp://docker:2376
+    }
     stages {
 
         stage('CI Build') {
