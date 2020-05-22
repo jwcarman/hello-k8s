@@ -6,7 +6,7 @@ pipeline {
         }
     }
     environment {
-        DOCKER_HOST=tcp://docker:2376
+        DOCKER_HOST='tcp://docker:2376'
     }
     stages {
 
