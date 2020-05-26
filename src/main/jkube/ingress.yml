@@ -2,13 +2,7 @@ spec:
   rules:
     - http:
         paths:
-          - path: /hello
-            pathType: Prefix
+          - path: /
             backend:
               serviceName: hello-k8s
               servicePort: 80
-          - path: /v3/api-docs
-              pathType: Prefix
-              backend:
-                serviceName: hello-k8s
-                servicePort: 80
