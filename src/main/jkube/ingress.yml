@@ -1,5 +1,3 @@
-apiVersion: networking.k8s.io/v1beta1
-kind: Ingress
 spec:
   rules:
     - http:
@@ -8,4 +6,4 @@ spec:
             pathType: Prefix
             backend:
               serviceName: hello-k8s
-              servicePort: 8080
+              servicePort: 80
