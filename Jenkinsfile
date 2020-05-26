@@ -10,7 +10,9 @@ pipeline {
 
         stage('CI Build') {
             steps {
-                sh 'mvn clean install'
+                configFileProvider([configFile(fileId: 'maven-settings', variable: 'MAVEN_SETTINGS')]) {
+                    sh 'mvn -s $MAVEN_SETTINGS clean install'
+                }
             }
         }
 
