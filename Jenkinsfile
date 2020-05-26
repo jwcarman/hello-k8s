@@ -7,7 +7,6 @@ pipeline {
     }
 
     stages {
-
         stage('CI Build') {
             steps {
                 configFileProvider([configFile(fileId: 'maven-settings', variable: 'MAVEN_SETTINGS')]) {
@@ -16,17 +15,12 @@ pipeline {
             }
         }
 
-
-
-
         stage('Build Image') {
             steps {
                 configFileProvider([configFile(fileId: 'maven-settings', variable: 'MAVEN_SETTINGS')]) {
                     sh 'mvn -DskipTests -s $MAVEN_SETTINGS spring-boot:build-image'
                 }
-
             }
-
         }
 
         stage('Push Image') {
