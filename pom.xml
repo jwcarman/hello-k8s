@@ -82,6 +82,11 @@
                 <configuration>
                     <resources>
                         <replicas>${k8s.replicas}</replicas>
+                        <serviceAccounts>
+                            <serviceAccount>
+                                <name>hello-k8s-sa</name>
+                            </serviceAccount>
+                        </serviceAccounts>
                     </resources>
                     <images>
                         <image>

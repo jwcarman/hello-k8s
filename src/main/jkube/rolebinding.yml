@@ -1,0 +1,10 @@
+metadata:
+  name: hello-k8s-rolebinding
+subjects:
+  - kind: ServiceAccount
+    name: hello-k8s-sa
+    namespace: default
+roleRef:
+  kind: Role
+  name: hello-k8s-role
+  apiGroup: rbac.authorization.k8s.io

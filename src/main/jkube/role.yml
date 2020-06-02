@@ -1,0 +1,7 @@
+metadata:
+  name: hello-k8s-role
+  namespace: default
+rules:
+  - apiGroups: [""]
+    resources: ["pods","configmaps"]
+    verbs: ["get", "watch", "list"]

@@ -1,8 +1,17 @@
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/issuer: "letsencrypt-staging"
 spec:
+  tls:
+    - hosts:
+        - hello.callibrity.systems
+      secretName: hello-tls
   rules:
-    - http:
+    - host: hello.callibrity.systems
+      http:
         paths:
-          - path: /
-            backend:
+          - backend:
               serviceName: hello-k8s
               servicePort: 80
+            path: /

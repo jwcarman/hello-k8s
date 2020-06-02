@@ -1,0 +1,4 @@
+spec:
+  template:
+    spec:
+      serviceAccountName: hello-k8s-sa
