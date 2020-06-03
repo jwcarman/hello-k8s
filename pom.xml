@@ -85,6 +85,7 @@
                         <serviceAccounts>
                             <serviceAccount>
                                 <name>hello-k8s-sa</name>
+                                <deploymentRef>${artifactId}</deploymentRef>
                             </serviceAccount>
                         </serviceAccounts>
                     </resources>
