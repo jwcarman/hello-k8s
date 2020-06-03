@@ -78,15 +78,32 @@
             <plugin>
                 <groupId>org.eclipse.jkube</groupId>
                 <artifactId>kubernetes-maven-plugin</artifactId>
-                <version>1.0.0-alpha-3</version>
+                <version>1.0.0-SNAPSHOT</version>
                 <configuration>
                     <resources>
                         <replicas>${k8s.replicas}</replicas>
                         <serviceAccounts>
                             <serviceAccount>
                                 <name>hello-k8s-sa</name>
+                                <deploymentRef>${artifactId}</deploymentRef>
                             </serviceAccount>
                         </serviceAccounts>
+                        <ingressRules>
+                            <ingressRule>
+                                <host>hello.callibrity.systems</host>
+                                <http>
+                                    <paths>
+                                        <path>
+                                            <path>/</path>
+                                            <backend>
+                                                <serviceName>${artifactId}</serviceName>
+                                                <servicePort>80</servicePort>
+                                            </backend>
+                                        </path>
+                                    </paths>
+                                </http>
+                            </ingressRule>
+                        </ingressRules>
                     </resources>
                     <images>
                         <image>
